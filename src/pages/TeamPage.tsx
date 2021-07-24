@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 
 import { MatchDetailCard } from "../components/MatchDetailCard";
 import { MatchSmallCard } from "../components/MatchSmallCard";
@@ -50,26 +51,28 @@ export const TeamPage: React.FC = () => {
     totalMatches: 0,
     totalWins: 0,
   });
-  const url = "http://localhost:8080/team/Delhi Capitals";
+  const { teamName } = useParams<{ teamName: string }>();
   useEffect(() => {
     console.log("hi");
 
     const fetchMatches = async () => {
-      const response = await fetch(url);
+      const response = await fetch(`http://localhost:8080/team/${teamName}`);
       const data = await response.json();
       setTeam(data);
       console.log(team);
     };
     fetchMatches();
-  }, []);
+  }, [teamName]);
 
-  console.log(team);
+  if (!team || !team.teamName) return <h1>not found</h1>;
   return (
     <div className="TeamPage">
       <h1>{team.teamName}</h1>
-      <MatchDetailCard match={team.matches[0]} />
+      <MatchDetailCard match={team.matches[0]} teamName={teamName} />
       {team.matches.slice(1).map((match, index) => {
-        return <MatchSmallCard key={index} match={match} />;
+        return (
+          <MatchSmallCard key={index} teamName={team.teamName} match={match} />
+        );
       })}
     </div>
   );

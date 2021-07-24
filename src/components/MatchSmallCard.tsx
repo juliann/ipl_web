@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 export interface IMatch {
   id: number;
   city: string;
@@ -18,13 +18,21 @@ export interface IMatch {
 }
 export interface Idata {
   match: IMatch;
+  teamName: string;
 }
-export const MatchSmallCard: React.FC<Idata> = ({ match }) => {
+
+export const MatchSmallCard: React.FC<Idata> = ({ match, teamName }) => {
+  if (!match) return null;
+  const otherTeam = match.team1 === teamName ? match.team2 : match.team1;
+  const otherTeamRoute = "/teams/" + otherTeam;
   return (
     <div className="MatchSmallCard">
       <p>
-        {match.team1} vs {match.team2}
+        vs <Link to={otherTeamRoute}>{otherTeam}</Link>
       </p>
+      <h3>
+        {match.matchWinner} won by {match.resultMargin} {match.result}
+      </h3>
     </div>
   );
 };
