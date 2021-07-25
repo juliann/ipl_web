@@ -26,8 +26,8 @@ interface ITeam {
     umpire2: string;
   }[];
 }
-export const TeamPage = () => {
-  const [team, setTeam] = useState<ITeam | undefined>();
+export const MatchPage = () => {
+  const [team, setTeam] = useState<ITeam>();
   const { teamName } = useParams<{ teamName: string }>();
   useEffect(() => {
     console.log("hi");
@@ -43,7 +43,7 @@ export const TeamPage = () => {
 
   if (!team || !team.teamName) return <h1>not found</h1>;
   return (
-    <div className="TeamPage">
+    <div className="MatchPage">
       <h1>{team.teamName}</h1>
       <MatchDetailCard match={team.matches[0]} teamName={teamName} />
       {team.matches.slice(1).map((match, index) => {

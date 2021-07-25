@@ -21,8 +21,9 @@ export interface Idata {
   teamName: string;
 }
 
-export const MatchSmallCard: React.FC<Idata> = ({ match, teamName }) => {
+export const MatchSmallCard = ({ match, teamName }: Idata) => {
   if (!match) return null;
+
   const otherTeam = match.team1 === teamName ? match.team2 : match.team1;
   const otherTeamRoute = "/teams/" + otherTeam;
   return (

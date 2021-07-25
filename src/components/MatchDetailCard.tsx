@@ -22,7 +22,7 @@ interface Idata {
   teamName: string;
 }
 
-export const MatchDetailCard: React.FC<Idata> = ({ match, teamName }) => {
+export const MatchDetailCard = ({ match, teamName }: Idata) => {
   if (!match) return null;
   const otherTeam = match.team1 === teamName ? match.team2 : match.team1;
   const otherTeamRoute = "/teams/" + otherTeam;
