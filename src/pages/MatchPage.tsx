@@ -27,30 +27,9 @@ interface ITeam {
   }[];
 }
 export const MatchPage = () => {
-  const [team, setTeam] = useState<ITeam>();
-  const { teamName } = useParams<{ teamName: string }>();
-  useEffect(() => {
-    console.log("hi");
-
-    const fetchMatches = async () => {
-      const response = await fetch(`http://localhost:8080/team/${teamName}`);
-      const data = await response.json();
-      setTeam(data);
-      console.log(team);
-    };
-    fetchMatches();
-  }, [teamName]);
-
-  if (!team || !team.teamName) return <h1>not found</h1>;
   return (
     <div className="MatchPage">
-      <h1>{team.teamName}</h1>
-      <MatchDetailCard match={team.matches[0]} teamName={teamName} />
-      {team.matches.slice(1).map((match, index) => {
-        return (
-          <MatchSmallCard key={index} teamName={team.teamName} match={match} />
-        );
-      })}
+      <h1>Match Page</h1>
     </div>
   );
 };
