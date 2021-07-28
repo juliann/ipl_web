@@ -31,7 +31,7 @@ export const MatchPage = () => {
     <div className="MatchPage">
       <h1>Match Page</h1>
       {matches &&
-        matches.slice(1).map((match, index) => {
+        matches.map((match, index) => {
           return (
             <MatchDetailCard key={index} teamName={teamName} match={match} />
           );

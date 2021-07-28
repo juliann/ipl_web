@@ -1,0 +1,15 @@
+.MatchSmallCard {
+  padding: 10px;
+  margin-bottom: 20px;
+}
+.MatchSmallCard .match-result {
+  margin-top: 10px;
+}
+.MatchSmallCard .additional-detail {
+  text-align: right;
+}
+.MatchSmallCard .additional-detail > p {
+  margin-bottom: 10px;
+}
+
+/*# sourceMappingURL=MatchSmallCard.css.map */
