@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./MatchDetailCard.scss";
+
 interface IMatch {
   id: number;
   city: string;
@@ -24,6 +25,7 @@ interface Idata {
 
 export const MatchDetailCard = ({ match, teamName }: Idata) => {
   if (!match) return null;
+
   const otherTeam = match.team1 === teamName ? match.team2 : match.team1;
   const otherTeamRoute = "/teams/" + otherTeam;
   const isMatchWon: boolean = teamName === match.matchWinner;

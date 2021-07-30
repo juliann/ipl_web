@@ -5,10 +5,11 @@ specifiers:
   '@testing-library/react': ^11.1.0
   '@testing-library/user-event': ^12.1.10
   '@types/jest': ^26.0.15
-  '@types/node': ^12.0.0
+  '@types/node': ^12.20.17
   '@types/react': ^17.0.0
   '@types/react-dom': ^17.0.0
   '@types/react-router-dom': ^5.1.8
+  dotenv: ^10.0.0
   node-sass: ^6.0.1
   prettier: ^2.3.2
   react: ^17.0.2
@@ -24,9 +25,10 @@ dependencies:
   '@testing-library/react': 11.2.7_react-dom@17.0.2+react@17.0.2
   '@testing-library/user-event': 12.8.3
   '@types/jest': 26.0.24
-  '@types/node': 12.20.16
+  '@types/node': 12.20.17
   '@types/react': 17.0.14
   '@types/react-dom': 17.0.9
+  dotenv: 10.0.0
   react: 17.0.2
   react-dom: 17.0.2_react@17.0.2
   react-minimal-pie-chart: 8.2.0_react-dom@17.0.2+react@17.0.2
@@ -2200,6 +2202,10 @@ packages:
 
   /@types/node/12.20.16:
     resolution: {integrity: sha512-6CLxw83vQf6DKqXxMPwl8qpF8I7THFZuIwLt4TnNsumxkp1VsRZWT8txQxncT/Rl2UojTsFzWgDG4FRMwafrlA==}
+    dev: false
+
+  /@types/node/12.20.17:
+    resolution: {integrity: sha512-so8EHl4S6MmatPS0f9sE1ND94/ocbcEshW5OpyYthRqeRpiYyW2uXYTo/84kmfdfeNrDycARkvuiXl6nO40NGg==}
     dev: false
 
   /@types/normalize-package-data/2.4.1:
@@ -4700,6 +4706,11 @@ packages:
 
   /dotenv-expand/5.1.0:
     resolution: {integrity: sha512-YXQl1DSa4/PQyRfgrv6aoNjhasp/p4qs9FjJ4q4cQk+8m4r6k4ZSiEyytKG8f8W9gi8WsQtIObNmKd+tMzNTmA==}
+    dev: false
+
+  /dotenv/10.0.0:
+    resolution: {integrity: sha512-rlBi9d8jpv9Sf1klPjNfFAuWDjKLwTIJJ/VxtoTwIR6hnZxcEOQCZg2oIL3MWBYw5GpUDKOEnND7LXTbIpQ03Q==}
+    engines: {node: '>=10'}
     dev: false
 
   /dotenv/8.2.0:

@@ -3,7 +3,8 @@ import { useParams } from "react-router-dom";
 
 import { MatchDetailCard } from "../components/MatchDetailCard";
 import { IMatch, MatchSmallCard } from "../components/MatchSmallCard";
-
+import "./MatchPage.scss";
+import { YearSelector } from "../components/YearSelector";
 interface ParamTypes {
   teamName: string;
   year: string;
@@ -29,13 +30,19 @@ export const MatchPage = () => {
 
   return (
     <div className="MatchPage">
-      <h1>Match Page</h1>
-      {matches &&
-        matches.map((match, index) => {
-          return (
-            <MatchDetailCard key={index} teamName={teamName} match={match} />
-          );
-        })}
+      <div className="year-selector">
+        <YearSelector teamName={teamName} />
+      </div>
+
+      <div>
+        <h1>Match Page</h1>
+        {matches &&
+          matches.map((match, index) => {
+            return (
+              <MatchDetailCard key={index} teamName={teamName} match={match} />
+            );
+          })}
+      </div>
     </div>
   );
 };
