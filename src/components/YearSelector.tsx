@@ -1,5 +1,5 @@
 import React from "react";
-
+import "./YearSelector.scss";
 import { Link } from "react-router-dom";
 
 interface IMatch {
@@ -31,11 +31,10 @@ export const YearSelector = (teamName: ITeamName) => {
     years.push(i);
   }
   return (
-    <ol>
+    <ol className="YearSelector">
       {years.map((year) => (
         <li>
-          <Link to={`/teams/${teamName.teamName}/matches/${year}`} />
-          {year}
+          <Link to={`/teams/${teamName.teamName}/matches/${year}`}>{year}</Link>
         </li>
       ))}
     </ol>

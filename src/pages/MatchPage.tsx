@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
 import { MatchDetailCard } from "../components/MatchDetailCard";
-import { IMatch, MatchSmallCard } from "../components/MatchSmallCard";
+import { IMatch } from "../components/MatchSmallCard";
 import "./MatchPage.scss";
 import { YearSelector } from "../components/YearSelector";
 interface ParamTypes {
@@ -25,17 +25,19 @@ export const MatchPage = () => {
     };
 
     fetchMatches();
-    console.log(matches);
-  }, []);
+  }, [teamName, year]);
 
   return (
     <div className="MatchPage">
       <div className="year-selector">
+        <h3>Select Year</h3>
         <YearSelector teamName={teamName} />
       </div>
 
       <div>
-        <h1>Match Page</h1>
+        <h1 className="page-header">
+          {teamName} matches in {year}
+        </h1>
         {matches &&
           matches.map((match, index) => {
             return (

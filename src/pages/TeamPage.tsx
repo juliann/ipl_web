@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import "./TeamPage.scss";
 import { MatchDetailCard } from "../components/MatchDetailCard";
 import { MatchSmallCard } from "../components/MatchSmallCard";
@@ -70,7 +70,11 @@ export const TeamPage = () => {
         );
       })}
       <div className="more-button">
-        <a href="#">more &gt;</a>
+        <Link
+          to={`/teams/${teamName}/matches/${process.env.REACT_APP_DATA_END_YEAR}`}
+        >
+          more &gt;
+        </Link>
       </div>
     </div>
   );
