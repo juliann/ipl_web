@@ -4,7 +4,7 @@ import "./TeamPage.scss";
 import { MatchDetailCard } from "../components/MatchDetailCard";
 import { MatchSmallCard } from "../components/MatchSmallCard";
 import { PieChart } from "react-minimal-pie-chart";
-interface ITeam {
+export interface ITeam {
   id: number;
   teamName: string;
   totalMatches: number;
@@ -32,12 +32,12 @@ export const TeamPage = () => {
   useEffect(() => {
     console.log("hi");
 
-    const fetchMatches = async () => {
+    const fetchTeams = async () => {
       const response = await fetch(`http://localhost:8080/team/${teamName}`);
       const data = await response.json();
       setTeam(data);
     };
-    fetchMatches();
+    fetchTeams();
   }, [teamName]);
 
   if (!team || !team.teamName) return <h1>not found</h1>;

@@ -2,23 +2,7 @@ import React from "react";
 import "./YearSelector.scss";
 import { Link } from "react-router-dom";
 
-interface IMatch {
-  id: number;
-  city: string;
-  date: string;
-  playerOfMatch: string;
-  venue: string;
-  team1: string;
-  team2: string;
-  tossDecision: string;
-  tossWinner: string;
-  matchWinner: string;
-  result: string;
-  resultMargin: string;
-  umpire1: string;
-  umpire2: string;
-}
-interface ITeamName {
+export interface ITeamName {
   teamName: string;
 }
 
